@@ -1,0 +1,56 @@
+<h2>Brokerage Accounts</h2>
+
+<div class="clearfix" ng-show="showAddNewForm">
+	<form>
+		<a href="#" class="close pull-right" ng-click="closeAddBrokerForm()">&times;</a>
+		<div class="form-group">
+	      <label>Brokerage Name</label>
+	      <input type="text" class="form-control" ng-model="newBrokerageName">
+	    </div>
+	    <button class="btn btn-block btn-primary" ng-click="searchBrokers()">Search</button>
+	</form>
+	
+	<br>
+
+	<ul class="feed-list">
+		<li ng-repeat="account in brokerSearchResults">
+			<div class="panel panel-info">
+				<div class="panel-body clearfix">
+					<h4 class="pull-left">{{ account.defaultDisplayName }}</h4>
+					<h4 class="pull-right glyphicon glyphicon-plus" select-brokerage-account=""></h4>
+				</div>
+			
+				<div class="panel-footer hidden">
+					<div ng-repeat="loginForm in account.loginForms">
+						<form ng-submit="addBrokerAccountForm(account.siteId)">
+							<div class="form-group">
+						      <label>Username</label>
+						      <input type="text" ng-model="brokerUsername" class="form-control">
+						    </div>
+
+						    <div class="form-group">
+						      <label>Password</label>
+						      <input type="password" ng-model="brokerPassword" class="form-control">
+						    </div>
+
+
+						    <div class="form-actions">
+								<input type="submit" class="btn btn-inverse" value="Login">
+						    </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<div ng-hide="showAddNewForm">
+	<button class="btn btn-block btn-primary" ng-click="openAddBrokerForm()">Add New</button>
+	<br>
+	<ul class="list-group">
+		<li ng-repeat="account in accounts" class="list-group-item">
+			<h4>{{ account.name }}</h4>
+		</li>
+	</ul>
+</div>

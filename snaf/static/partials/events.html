@@ -1,0 +1,23 @@
+<h2>Earnings Calls</h2>
+
+<div ng-show="loadingEvents">
+	<div class="loader">
+		<img src="/static/img/pusheen.gif" />
+	</div>
+</div>
+<div ng-show="!loadingEvent">
+
+	<ul class="list-group">
+		<li class="list-group-item clearfix" ng-repeat="symbolEvent in eventSymbols | filter:filterNullEvents">
+			<a class="pull-right" ng-href="{{ symbolEvent.events.ConferenceCall.BroadcastURL }}">
+				<span class="glyphicon glyphicon-earphone"></span>
+				 | {{ symbolEvent.events.ConferenceCall.Date }}
+			</a>
+		  	<h4 class="pull-left">
+		  		<span class="label label-default">{{ symbolEvent.symbol }}</span>
+		  		{{ symbolEvent.events.Security.Name }} | {{ symbolEvent.events.EarningsQuarter }}
+		  		 | {{ symbolEvent.events.Security.CategoryOrIndustry }}
+		  	</h4>
+		</li>
+	</ul>
+</div>

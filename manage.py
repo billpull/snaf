@@ -3,8 +3,7 @@ import json
 import argparse
 import requests
 
-from angular_flask.core import db
-from angular_flask.models import Post
+from snaf.core import db
 
 def create_sample_db_entry(api_endpoint, payload):
 	url = 'http://localhost:5000/' + api_endpoint
@@ -48,6 +47,3 @@ def main():
 
 if __name__ == '__main__':
 	main()
-
-
-
