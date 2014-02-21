@@ -3,13 +3,13 @@ import urllib
 import simplejson
 
 AUTHORIZE_CO_BRAND = "https://rest.developer.yodlee.com/services/srest/restserver/v1.0/authenticate/coblogin"
-COB_LOGIN = "sbCobbillpull"
-COB_PASSWORD = "fec85d5d-8426-41dd-8774-c4f33de1dcef"
+COB_LOGIN = "YODLEE_COB_LOGIN"
+COB_PASSWORD = "YODLEE_COB_PASSWORD"
 
 
 LOGIN = "https://rest.developer.yodlee.com/services/srest/restserver/v1.0/authenticate/login"
-USER_LOGIN = "sbMembillpull1"
-USER_PASSWORD = "sbMembillpull1#123"
+USER_LOGIN = "YODLEE_USER_LOGIN"
+USER_PASSWORD = "YODLEE_USER_PASSWORD"
 
 SEARCH = "https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteTraversal/searchSite"
 
